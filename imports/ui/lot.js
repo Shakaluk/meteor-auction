@@ -1,0 +1,1 @@
+import './lot.html';

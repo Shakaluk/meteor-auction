@@ -1,0 +1,34 @@
+<body>
+<div>
+    <header>
+        <h1>Welcome to Auction !</h1>
+        <h2>Current lot</h2>
+    </header>
+    {{#with currentLot}}
+        {{> lot}}
+    {{/with}}
+    <br>
+    <h2>All lots</h2>
+    <ul>
+        {{#each lots}}
+            <li>
+                {{> lot}}
+            </li>
+        {{/each}}
+    </ul>
+    <br>
+    {{> addLot}}
+</div>
+</body>
+<template name="addLot">
+    <form class="new-lot">
+        <h3>Add lot</h3>
+        <input name="name" placeholder="Name" required>
+        <br>
+        <br>
+        <input name="duration" type="number" min="10" max="100" placeholder="Duration" required>
+        <br>
+        <br>
+        <button>Add</button>
+    </form>
+</template>
